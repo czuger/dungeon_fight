@@ -1,0 +1,27 @@
+= form_for @s_skill, html: { class: "form-horizontal", role: "form" } do |f|
+  -if @s_skill.errors.any?
+    .alert.alert-danger.alert-dismissable{role: "alert"}
+      %button.close{type: "button", data: {dismiss: "alert"} }
+        %span{aria: {hidden: "true"} } &times;
+        %span.sr-only Close
+      %h4= "#{pluralize(@s_skill.errors.count, "error")} prohibited this s_skill from being saved:"
+
+      %ul
+        - @s_skill.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label t(:name), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label t(:desc), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :desc, class: 'form-control'
+  .form-group
+    = f.label t(:difficulty), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :difficulty, class: 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit value: t(:validate), class: 'btn btn-primary'

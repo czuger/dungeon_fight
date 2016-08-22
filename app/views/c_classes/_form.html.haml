@@ -1,0 +1,31 @@
+= form_for @c_class, html: { class: "form-horizontal", role: "form" } do |f|
+  -if @c_class.errors.any?
+    .alert.alert-danger.alert-dismissable{role: "alert"}
+      %button.close{type: "button", data: {dismiss: "alert"} }
+        %span{aria: {hidden: "true"} } &times;
+        %span.sr-only Close
+      %h4= "#{pluralize(@c_class.errors.count, "error")} prohibited this c_class from being saved:"
+
+      %ul
+        - @c_class.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label t(:name), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label t(:desc), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :desc, class: 'form-control'
+
+  .form-group
+    = f.label :skills, class: 'col-sm-2 control-label'
+    - @skills.each do |skill|
+      .col-sm-10
+        = check_box_tag 'skills[]', skill.id, @set_skills.include?( skill.id )
+        = skill.name
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit value: t(:update), class: 'btn btn-primary'

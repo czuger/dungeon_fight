@@ -1,0 +1,16 @@
+.page-header
+  = link_to s_skills_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    =t('back')
+  = link_to edit_s_skill_path(@s_skill), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    =t('edit')
+  %h1= t('show') + ' ' + t('det_'+t('s_skill_gender')) + ' ' + t('s_skill')
+
+%dl.dl-horizontal
+  %dt=t('Name')+':'
+  %dd= @s_skill.name
+  %dt=t('Desc')+':'
+  %dd= @s_skill.desc
+  %dt=t('Difficulty')+':'
+  %dd= @s_skill.difficulty

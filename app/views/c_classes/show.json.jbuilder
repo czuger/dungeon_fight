@@ -1,0 +1,1 @@
+json.partial! "c_classes/c_class", c_class: @c_class

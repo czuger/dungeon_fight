@@ -1,0 +1,10 @@
+.page-header
+  = link_to c_classes_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    = t('back')
+  = link_to @c_class, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-info-sign
+    = t('show')
+  %h1= t('edit') + ' ' + t(:det_f) + ' ' + t('c_class')
+
+= render 'form'

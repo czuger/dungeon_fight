@@ -1,0 +1,24 @@
+.page-header
+  = link_to new_c_class_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    = t( 'new_f' ) + ' ' + t( 'c_class' )
+  %h1= t( 'listing' ) + ' ' +  t( 'c_classes' )
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th= t( 'name' )
+        %th= t( 'desc' )
+        %th
+        %th
+        %th
+
+    %tbody
+      - @c_classes.each do |c_class|
+        %tr
+          %td= c_class.name
+          %td= c_class.desc
+          %td= link_to t( 'show' ), c_class
+          %td= link_to t( 'edit' ), edit_c_class_path(c_class)
+          %td= link_to t( 'destroy' ), c_class, data: { confirm: 'Are you sure?' }, method: :delete

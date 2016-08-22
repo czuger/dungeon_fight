@@ -1,0 +1,7 @@
+.page-header
+  = link_to s_skills_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    = t('back')
+  %h1= t( 'new_'+t('s_skill_gender') ) + ' ' + t( 's_skill' )
+
+= render 'form'
