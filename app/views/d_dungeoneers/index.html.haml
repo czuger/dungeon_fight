@@ -1,0 +1,34 @@
+.page-header
+  = link_to new_d_dungeoneer_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    = t( '.new' )
+  %h1= t( '.list' )
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th= t( 'd_dungeoneer.name' ).capitalize
+        %th= t( 'd_dungeoneer.desc' ).capitalize
+        %th= t( 'd_dungeoneer.fo' ).capitalize
+        %th= t( 'd_dungeoneer.coo' ).capitalize
+        %th= t( 'd_dungeoneer.mem' ).capitalize
+        %th= t( 'd_dungeoneer.vol' ).capitalize
+        %th= t( 'd_dungeoneer.c_class' ).capitalize
+        %th
+        %th
+        %th
+
+    %tbody
+      - @d_dungeoneers.each do |d_dungeoneer|
+        %tr
+          %td= d_dungeoneer.name
+          %td= d_dungeoneer.desc
+          %td= d_dungeoneer.fo
+          %td= d_dungeoneer.coo
+          %td= d_dungeoneer.mem
+          %td= d_dungeoneer.vol
+          %td= d_dungeoneer.c_class
+          %td= link_to t( 'show' ), d_dungeoneer
+          %td= link_to t( 'edit' ), edit_d_dungeoneer_path(d_dungeoneer)
+          %td= link_to t( 'destroy' ), d_dungeoneer, data: { confirm: 'Are you sure?' }, method: :delete

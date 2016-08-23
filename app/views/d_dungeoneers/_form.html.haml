@@ -1,0 +1,43 @@
+= form_for @d_dungeoneer, html: { class: "form-horizontal", role: "form" } do |f|
+  -if @d_dungeoneer.errors.any?
+    .alert.alert-danger.alert-dismissable{role: "alert"}
+      %button.close{type: "button", data: {dismiss: "alert"} }
+        %span{aria: {hidden: "true"} } &times;
+        %span.sr-only Close
+      %h4= "#{pluralize(@d_dungeoneer.errors.count, "error")} prohibited this d_dungeoneer from being saved:"
+
+      %ul
+        - @d_dungeoneer.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label t('d_dungeoneer.name'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label t('d_dungeoneer.desc'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :desc, class: 'form-control'
+  .form-group
+    = f.label t('d_dungeoneer.fo'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :fo, class: 'form-control'
+  .form-group
+    = f.label t('d_dungeoneer.coo'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :coo, class: 'form-control'
+  .form-group
+    = f.label t('d_dungeoneer.mem'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :mem, class: 'form-control'
+  .form-group
+    = f.label t('d_dungeoneer.vol'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :vol, class: 'form-control'
+  .form-group
+    = f.label t('d_dungeoneer.c_class'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :c_class, class: 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit value: t(:validate), class: 'btn btn-primary'

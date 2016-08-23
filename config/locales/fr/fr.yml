@@ -21,25 +21,8 @@
 
 fr:
   show: 'Détail'
-  edit: 'Edition'
   destroy: 'Supprimer'
   update: 'Mettre a jour'
-  new_m: 'Nouveau'
-  new_f: 'Nouvelle'
-  name: 'Nom'
-  desc: 'Description'
-  listing: 'Liste des'
   back: 'Retour'
   validate: 'Valider'
-
-  det_f: "d'une"
-
-  c_class: 'classe'
-  c_classes: 'classes'
-
-  s_skill_gender: 'f'
-  s_skill: 'compétence'
-  s_skills: 'compétences'
-
-  difficulty: 'Difficulté'
 

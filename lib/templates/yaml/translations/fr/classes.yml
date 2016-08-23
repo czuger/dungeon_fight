@@ -1,0 +1,23 @@
+c_class:
+  singular: classe
+  plural: classes
+  new: nouvelle
+  edit: edition
+  show: détail
+  of_a: "d'une"
+
+d_dungeoneer:
+  singular: aventurier
+  plural: aventuriers
+  new: nouvel
+  edit: edition
+  show: détail
+  of_a: "d'un"
+
+s_skill:
+  singular: compétence
+  plural: compétences
+  new: nouvelle
+  edit: edition
+  show: détail
+  of_a: "d'une"

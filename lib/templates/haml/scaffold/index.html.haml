@@ -1,15 +1,15 @@
 .page-header
   = link_to new_<%= singular_table_name %>_path, class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-plus
-    = t( 'new_'+t('<%= singular_table_name %>_gender') ) + ' ' + t( '<%= singular_table_name %>' )
-  %h1= t( 'listing' ) + ' ' +  t( '<%= plural_table_name %>' )
+    = t( '.new' )
+  %h1= t( '.list' )
 
 .table-responsive
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
 <% for attribute in attributes -%>
-        %th= t( '<%= attribute.name %>' )
+        %th= t( '<%= singular_table_name %>.<%= attribute.name %>' ).capitalize
 <% end -%>
         %th
         %th

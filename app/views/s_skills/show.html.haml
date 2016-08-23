@@ -5,12 +5,12 @@
   = link_to edit_s_skill_path(@s_skill), class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
     =t('edit')
-  %h1= t('show') + ' ' + t('det_'+t('s_skill_gender')) + ' ' + t('s_skill')
+  %h1= t('.show')
 
 %dl.dl-horizontal
-  %dt=t('Name')+':'
+  %dt=t('s_skills.Name')+':'
   %dd= @s_skill.name
-  %dt=t('Desc')+':'
+  %dt=t('s_skills.Desc')+':'
   %dd= @s_skill.desc
-  %dt=t('Difficulty')+':'
+  %dt=t('s_skills.Difficulty')+':'
   %dd= @s_skill.difficulty

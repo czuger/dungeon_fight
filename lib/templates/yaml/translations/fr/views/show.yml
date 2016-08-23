@@ -1,0 +1,5 @@
+fr:
+  plural_table_name:
+    show:
+      show: "translated_show_capitalized of_a singular_translated_name"
+

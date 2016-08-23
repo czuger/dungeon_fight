@@ -5,10 +5,10 @@
   = link_to edit_c_class_path(@c_class), class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
     =t('edit')
-  %h1= t('show') + ' ' + t(:det_f) + ' ' + t('c_class')
+  %h1= t('.show')
 
 %dl.dl-horizontal
-  %dt= t(:name) + ':'
+  %dt=t('c_classes.Name')+':'
   %dd= @c_class.name
-  %dt= t(:desc) + ':'
+  %dt=t('c_classes.Desc')+':'
   %dd= @c_class.desc

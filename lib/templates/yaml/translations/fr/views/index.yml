@@ -1,0 +1,6 @@
+fr:
+  plural_table_name:
+    index:
+      new: 'translated_new_capitalized singular_translated_name'
+      list: 'Liste des plural_translated_name'
+

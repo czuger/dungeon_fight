@@ -1,0 +1,5 @@
+fr:
+  plural_table_name:
+    new:
+      new: 'translated_new_capitalized singular_translated_name'
+

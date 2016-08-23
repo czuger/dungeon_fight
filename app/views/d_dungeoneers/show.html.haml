@@ -1,0 +1,24 @@
+.page-header
+  = link_to d_dungeoneers_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    =t('back')
+  = link_to edit_d_dungeoneer_path(@d_dungeoneer), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    =t('edit')
+  %h1= t('.show')
+
+%dl.dl-horizontal
+  %dt=t('d_dungeoneer.Name')+':'
+  %dd= @d_dungeoneer.name
+  %dt=t('d_dungeoneer.Desc')+':'
+  %dd= @d_dungeoneer.desc
+  %dt=t('d_dungeoneer.Fo')+':'
+  %dd= @d_dungeoneer.fo
+  %dt=t('d_dungeoneer.Coo')+':'
+  %dd= @d_dungeoneer.coo
+  %dt=t('d_dungeoneer.Mem')+':'
+  %dd= @d_dungeoneer.mem
+  %dt=t('d_dungeoneer.Vol')+':'
+  %dd= @d_dungeoneer.vol
+  %dt=t('d_dungeoneer.C class')+':'
+  %dd= @d_dungeoneer.c_class

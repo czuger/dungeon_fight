@@ -5,10 +5,10 @@
   = link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-pencil
     =t('edit')
-  %h1= t('show') + ' ' + t('det_'+t('<%= singular_table_name %>_gender')) + ' ' + t('<%= singular_table_name %>')
+  %h1= t('.show')
 
 %dl.dl-horizontal
   <%- for attribute in attributes -%>
-  %dt=t('<%= attribute.human_name %>')+':'
+  %dt=t('<%= singular_table_name %>.<%= attribute.human_name %>')+':'
   %dd= @<%= singular_table_name %>.<%= attribute.name %>
   <%- end -%>
