@@ -18,26 +18,28 @@
     = f.label t('d_dungeoneer.desc'), class: 'col-sm-2 control-label'
     .col-sm-10
       = f.text_field :desc, class: 'form-control'
-  .form-group
-    = f.label t('d_dungeoneer.fo'), class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :fo, class: 'form-control'
-  .form-group
-    = f.label t('d_dungeoneer.coo'), class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :coo, class: 'form-control'
-  .form-group
-    = f.label t('d_dungeoneer.mem'), class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :mem, class: 'form-control'
-  .form-group
-    = f.label t('d_dungeoneer.vol'), class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.number_field :vol, class: 'form-control'
-  .form-group
-    = f.label t('d_dungeoneer.c_class'), class: 'col-sm-2 control-label'
-    .col-sm-10
-      = f.text_field :c_class, class: 'form-control'
+
+  - unless @update_lock
+    .form-group
+      = f.label t('d_dungeoneer.fo'), class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.number_field :fo, class: 'form-control'
+    .form-group
+      = f.label t('d_dungeoneer.coo'), class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.number_field :coo, class: 'form-control'
+    .form-group
+      = f.label t('d_dungeoneer.mem'), class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.number_field :mem, class: 'form-control'
+    .form-group
+      = f.label t('d_dungeoneer.vol'), class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.number_field :vol, class: 'form-control'
+    .form-group
+      = f.label t('d_dungeoneer.c_class'), class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.collection_select :c_class_id, CClass.all.order( :name ), :id, :name, class: 'form-control'
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit value: t(:validate), class: 'btn btn-primary'

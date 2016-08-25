@@ -8,17 +8,17 @@
   %h1= t('.show')
 
 %dl.dl-horizontal
-  %dt=t('d_dungeoneer.Name')+':'
+  %dt=t('d_dungeoneer.name').capitalize+':'
   %dd= @d_dungeoneer.name
-  %dt=t('d_dungeoneer.Desc')+':'
+  %dt=t('d_dungeoneer.desc').capitalize+':'
   %dd= @d_dungeoneer.desc
-  %dt=t('d_dungeoneer.Fo')+':'
+  %dt=t('d_dungeoneer.fo').capitalize+':'
   %dd= @d_dungeoneer.fo
-  %dt=t('d_dungeoneer.Coo')+':'
+  %dt=t('d_dungeoneer.coo').capitalize+':'
   %dd= @d_dungeoneer.coo
-  %dt=t('d_dungeoneer.Mem')+':'
+  %dt=t('d_dungeoneer.mem').capitalize+':'
   %dd= @d_dungeoneer.mem
-  %dt=t('d_dungeoneer.Vol')+':'
+  %dt=t('d_dungeoneer.vol').capitalize+':'
   %dd= @d_dungeoneer.vol
-  %dt=t('d_dungeoneer.C class')+':'
-  %dd= @d_dungeoneer.c_class
+  %dt=t('d_dungeoneer.c_class').capitalize+':'
+  %dd= @d_dungeoneer.c_class.name

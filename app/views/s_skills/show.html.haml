@@ -8,9 +8,9 @@
   %h1= t('.show')
 
 %dl.dl-horizontal
-  %dt=t('s_skills.Name')+':'
+  %dt=t('s_skill.name').capitalize+':'
   %dd= @s_skill.name
-  %dt=t('s_skills.Desc')+':'
+  %dt=t('s_skill.desc').capitalize+':'
   %dd= @s_skill.desc
-  %dt=t('s_skills.Difficulty')+':'
+  %dt=t('s_skill.difficulty').capitalize+':'
   %dd= @s_skill.difficulty

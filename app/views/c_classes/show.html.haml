@@ -8,7 +8,7 @@
   %h1= t('.show')
 
 %dl.dl-horizontal
-  %dt=t('c_classes.Name')+':'
+  %dt=t('c_class.name').capitalize+':'
   %dd= @c_class.name
-  %dt=t('c_classes.Desc')+':'
+  %dt=t('c_class.desc').capitalize+':'
   %dd= @c_class.desc

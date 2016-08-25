@@ -9,6 +9,6 @@
 
 %dl.dl-horizontal
   <%- for attribute in attributes -%>
-  %dt=t('<%= singular_table_name %>.<%= attribute.human_name %>')+':'
+  %dt=t('<%= singular_table_name %>.<%= attribute.name %>').capitalize+':'
   %dd= @<%= singular_table_name %>.<%= attribute.name %>
   <%- end -%>

@@ -23,6 +23,7 @@ class DDungeoneersController < ApplicationController
 
   # GET /d_dungeoneers/1/edit
   def edit
+    @update_lock = true
   end
 
   # POST /d_dungeoneers
@@ -69,6 +70,10 @@ class DDungeoneersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_d_dungeoneer
       @d_dungeoneer = DDungeoneer.find(params[:id])
+    end
+
+    def create_skills_links
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

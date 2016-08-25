@@ -39,19 +39,6 @@ ActiveRecord::Schema.define(version: 20160823125255) do
     t.index ["c_class_id"], name: "index_d_dungeoneers_on_c_class_id"
   end
 
-  create_table "d_dungoneers", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "desc"
-    t.integer  "fo",         null: false
-    t.integer  "coo",        null: false
-    t.integer  "mem",        null: false
-    t.integer  "vol",        null: false
-    t.integer  "c_class_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["c_class_id"], name: "index_d_dungoneers_on_c_class_id"
-  end
-
   create_table "s_skills", force: :cascade do |t|
     t.string   "name",                   null: false
     t.string   "desc"
