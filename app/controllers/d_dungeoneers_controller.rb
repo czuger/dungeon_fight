@@ -33,6 +33,11 @@ class DDungeoneersController < ApplicationController
 
     respond_to do |format|
       if @d_dungeoneer.save
+
+        @d_dungeoneer.c_class.s_skills.each do |skill|
+          DDungeoneerSkill.create( d_dungeoneer_id: @d_dungeoneer.id, s_skill_id: skill.id )
+        end
+
         format.html { redirect_to @d_dungeoneer, notice: 'D dungeoneer was successfully created.' }
         format.json { render :show, status: :created, location: @d_dungeoneer }
       else

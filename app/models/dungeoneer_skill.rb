@@ -1,2 +1,0 @@
-class DungeoneerSkill < ApplicationRecord
-end

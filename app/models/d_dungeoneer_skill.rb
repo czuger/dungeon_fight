@@ -1,0 +1,2 @@
+class DDungeoneerSkill < ApplicationRecord
+end
