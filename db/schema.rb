@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160825190138) do
     t.integer  "d_dungeoneer_id",                 null: false
     t.integer  "s_skill_id",                      null: false
     t.boolean  "active",          default: false, null: false
+    t.datetime "active_since",                    null: false
     t.integer  "level",           default: 1,     null: false
     t.integer  "skills_points",   default: 0,     null: false
     t.datetime "created_at",                      null: false

@@ -40,6 +40,12 @@
       = f.label t('d_dungeoneer.c_class'), class: 'col-sm-2 control-label'
       .col-sm-10
         = f.collection_select :c_class_id, CClass.all.order( :name ), :id, :name, class: 'form-control'
+  - else
+    .form-group
+      = f.label '.learning_skill', class: 'col-sm-2 control-label'
+      .col-sm-10
+        = select_tag( 'learning_skill', options_from_collection_for_select( @d_dungeoneer.s_skills, :id, :name ), include_blank: true, class: 'form-control' )
+
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit value: t(:validate), class: 'btn btn-primary'

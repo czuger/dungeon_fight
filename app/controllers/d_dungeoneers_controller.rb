@@ -52,6 +52,7 @@ class DDungeoneersController < ApplicationController
   def update
     respond_to do |format|
       if @d_dungeoneer.update(d_dungeoneer_params)
+        update_skills_status
         format.html { redirect_to @d_dungeoneer, notice: 'D dungeoneer was successfully updated.' }
         format.json { render :show, status: :ok, location: @d_dungeoneer }
       else
@@ -77,8 +78,20 @@ class DDungeoneersController < ApplicationController
       @d_dungeoneer = DDungeoneer.find(params[:id])
     end
 
-    def create_skills_links
-
+    def update_skills_status
+      # TODO : finalize the logic
+      # if params[:learning_skill].empty?
+      #   current_learning_skill = @d_dungeoneer.d_dungeoneer_skills.where( active: true ).first
+      # else
+      #   DDungeoneerSkill.where( d_dungeoneer_id: @d_dungeoneer.is, s_skill_id: params[:learning_skill] ).
+      #     first.update_attributes!( active: true, active_since: Time.now )
+      # end
+      # if current_learning_skill
+      #   skills_points =
+      #     current_learning_skill.update_attributes(
+      #       active: true, active_since: Time.now
+      #     )
+      # end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
