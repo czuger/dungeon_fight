@@ -1,8 +1,0 @@
-fr:
-  d_dungeoneers:
-    plural: 'aventuriers'
-    index:
-      new: 'Nouvel'
-
-  d_dungeoneer: 'aventurier'
-  d_dungeoneer_gender: 'm'

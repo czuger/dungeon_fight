@@ -13,10 +13,12 @@
 ActiveRecord::Schema.define(version: 20160827172326) do
 
   create_table "c_classes", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "name",             null: false
     t.string   "desc"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "first_attribute",  null: false
+    t.string   "second_attribute", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "c_classes_s_skills", id: false, force: :cascade do |t|
@@ -27,14 +29,12 @@ ActiveRecord::Schema.define(version: 20160827172326) do
   end
 
   create_table "d_dungeoneer_skills", force: :cascade do |t|
-    t.integer  "d_dungeoneer_id",                 null: false
-    t.integer  "s_skill_id",                      null: false
-    t.boolean  "active",          default: false, null: false
-    t.datetime "active_since",                    null: false
-    t.integer  "level",           default: 1,     null: false
-    t.integer  "skills_points",   default: 0,     null: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.integer  "d_dungeoneer_id",             null: false
+    t.integer  "s_skill_id",                  null: false
+    t.integer  "skills_points",   default: 0, null: false
+    t.integer  "level",           default: 1, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["d_dungeoneer_id"], name: "index_d_dungeoneer_skills_on_d_dungeoneer_id"
     t.index ["s_skill_id"], name: "index_d_dungeoneer_skills_on_s_skill_id"
   end

@@ -6,12 +6,15 @@ class FrTranslationsGenerator < Rails::Generators::Base
 
     [ :fr ].each do |lang|
 
-      FrTranslationsGenerator.source_root( "lib/templates/yaml/translations/#{lang}" )
-
-      copy_file( "columns_names.yml", "config/locales/#{lang}/columns_names.yml" )
+      FrTranslationsGenerator.source_root( "lib/templates/yaml/translations/#{lang}/columns_names/" )
 
       ApplicationRecord.send(:subclasses).map{ |e| e.name.underscore }.each do |model_name|
-        classes_translations = YAML.load_file( "lib/templates/yaml/translations/#{lang}/classes.yml" )
+
+        copy_file( "#{model_name}.yml", "config/locales/#{lang}/columns_names/#{model_name}.yml" )
+
+        classes_translations = YAML.load_file( "lib/templates/yaml/translations/#{lang}/classes/#{model_name}.yml" )
+        classes_translations = classes_translations[lang.to_s]
+
         Dir.glob( "lib/templates/yaml/translations/#{lang}/views/*.yml" ).each do |entry|
 
           file_content = File.open( entry, 'r' ).read
