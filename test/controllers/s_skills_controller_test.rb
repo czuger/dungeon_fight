@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SSkillsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @s_skill = s_skills(:one)
+    @s_skill = create( :s_skill )
   end
 
   test "should get index" do

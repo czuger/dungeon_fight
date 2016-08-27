@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CClassesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @c_class = c_classes(:one)
+    @c_class = create( :c_class )
   end
 
   test "should get index" do

@@ -6,6 +6,6 @@ FactoryGirl.define do
     coo 1
     mem 1
     vol 1
-    c_class nil
+    c_class
   end
 end

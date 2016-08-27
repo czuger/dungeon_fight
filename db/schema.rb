@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20160825190138) do
     t.index ["s_skill_id"], name: "index_c_classes_s_skills_on_s_skill_id"
   end
 
-  create_table "d_dungeoneer_skills", id: false, force: :cascade do |t|
+  create_table "d_dungeoneer_skills", force: :cascade do |t|
     t.integer  "d_dungeoneer_id",                 null: false
     t.integer  "s_skill_id",                      null: false
     t.boolean  "active",          default: false, null: false
