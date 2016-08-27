@@ -2,5 +2,5 @@ fr:
   d_dungeoneers:
     show:
       show: "Détail d'un aventurier"
-      current_learning_skill: "Compétence :"
+      current_learning_skill: "Compétence"
 

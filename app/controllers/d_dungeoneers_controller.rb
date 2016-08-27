@@ -35,11 +35,6 @@ class DDungeoneersController < ApplicationController
     ActiveRecord::Base.transaction do
       respond_to do |format|
         if @d_dungeoneer.save
-
-          @d_dungeoneer.c_class.s_skills.each do |skill|
-            DDungeoneerSkill.create( d_dungeoneer_id: @d_dungeoneer.id, s_skill_id: skill.id )
-          end
-
           format.html { redirect_to @d_dungeoneer, notice: 'D dungeoneer was successfully created.' }
           format.json { render :show, status: :created, location: @d_dungeoneer }
         else
@@ -86,25 +81,9 @@ class DDungeoneersController < ApplicationController
     end
 
     def update_skills_status
-      # TODO : to fix
-      if params[:learning_skill]
-        if params[:learning_skill].empty?
-          current_learning_skill = @d_dungeoneer.d_dungeoneer_skills.where( active: true ).first
-          current_learning_skill.update_attributes( active: false ) if current_learning_skill
-        else
-          to_learn_skill = DDungeoneerSkill.where( d_dungeoneer_id: @d_dungeoneer.id, s_skill_id: params[:learning_skill] ).first
-          to_learn_skill.update_attributes( active: true, active_since: Time.now ) if to_learn_skill
-        end
-      end
     end
 
     def update_skills_points
-      d_d_skill = @d_dungeoneer.s_current_learning_d_dungeoneer_skill
-      if d_d_skill
-        time_spend = Time.now - d_d_skill.active_since
-        d_d_skill.increment( :skills_points, time_spend )
-        d_d_skill.update_attribute( :level, ( d_d_skill.skills_points**(1/5.0) ).floor )
-      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

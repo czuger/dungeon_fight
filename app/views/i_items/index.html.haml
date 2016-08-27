@@ -1,0 +1,32 @@
+.page-header
+  = link_to new_i_item_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    = t( '.new' )
+  %h1= t( '.list' )
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th= t( 'i_item.name' ).capitalize
+        %th= t( 'i_item.desc' ).capitalize
+        %th= t( 'i_item.difficulty' ).capitalize
+        %th= t( 'i_item.attack_dice' ).capitalize
+        %th= t( 'i_item.c_class_id' ).capitalize
+        %th= t( 'i_item.min_level' ).capitalize
+        %th
+        %th
+        %th
+
+    %tbody
+      - @i_items.each do |i_item|
+        %tr
+          %td= i_item.name
+          %td= i_item.desc
+          %td= i_item.difficulty
+          %td= i_item.attack_dice
+          %td= i_item.c_class_id
+          %td= i_item.min_level
+          %td= link_to t( 'show' ), i_item
+          %td= link_to t( 'edit' ), edit_i_item_path(i_item)
+          %td= link_to t( 'destroy' ), i_item, data: { confirm: 'Are you sure?' }, method: :delete

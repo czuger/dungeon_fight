@@ -1,0 +1,22 @@
+.page-header
+  = link_to i_items_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    =t('back')
+  = link_to edit_i_item_path(@i_item), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    =t('edit')
+  %h1= t('.show')
+
+%dl.dl-horizontal
+  %dt=t('i_item.name').capitalize+':'
+  %dd= @i_item.name
+  %dt=t('i_item.desc').capitalize+':'
+  %dd= @i_item.desc
+  %dt=t('i_item.difficulty').capitalize+':'
+  %dd= @i_item.difficulty
+  %dt=t('i_item.attack_dice').capitalize+':'
+  %dd= @i_item.attack_dice
+  %dt=t('i_item.c_class_id').capitalize+':'
+  %dd= @i_item.c_class_id
+  %dt=t('i_item.min_level').capitalize+':'
+  %dd= @i_item.min_level

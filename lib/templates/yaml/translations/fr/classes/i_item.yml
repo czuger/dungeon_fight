@@ -1,0 +1,8 @@
+fr:
+  i_item:
+    singular: objet
+    plural: objets
+    new: nouvel
+    edit: edition
+    show: détail
+    of_a: "d'un"

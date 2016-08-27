@@ -1,0 +1,8 @@
+fr:
+  d_dungeoneer_skill:
+    singular: d_dungeoneer_skill
+    plural: d_dungeoneer_skills
+    new: nouvel
+    edit: edition
+    show: détail
+    of_a: "d'un"

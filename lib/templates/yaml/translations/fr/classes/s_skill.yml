@@ -1,0 +1,8 @@
+fr:
+  s_skill:
+    singular: compétence
+    plural: compétences
+    new: nouvelle
+    edit: edition
+    show: détail
+    of_a: "d'une"

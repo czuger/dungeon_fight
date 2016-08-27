@@ -1,0 +1,39 @@
+= form_for @i_item, html: { class: "form-horizontal", role: "form" } do |f|
+  -if @i_item.errors.any?
+    .alert.alert-danger.alert-dismissable{role: "alert"}
+      %button.close{type: "button", data: {dismiss: "alert"} }
+        %span{aria: {hidden: "true"} } &times;
+        %span.sr-only Close
+      %h4= "#{pluralize(@i_item.errors.count, "error")} prohibited this i_item from being saved:"
+
+      %ul
+        - @i_item.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label t('i_item.name'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label t('i_item.desc'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :desc, class: 'form-control'
+  .form-group
+    = f.label t('i_item.difficulty'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :difficulty, class: 'form-control'
+  .form-group
+    = f.label t('i_item.attack_dice'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :attack_dice, class: 'form-control'
+  .form-group
+    = f.label t('i_item.c_class_id'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :c_class_id, class: 'form-control'
+  .form-group
+    = f.label t('i_item.min_level'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :min_level, class: 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit value: t(:validate), class: 'btn btn-primary'

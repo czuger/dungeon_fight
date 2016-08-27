@@ -1,0 +1,8 @@
+fr:
+  d_dungeoneer:
+    singular: aventurier
+    plural: aventuriers
+    new: nouvel
+    edit: edition
+    show: détail
+    of_a: "d'un"

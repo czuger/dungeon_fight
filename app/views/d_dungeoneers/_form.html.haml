@@ -44,7 +44,7 @@
     .form-group
       = f.label '.learning_skill', class: 'col-sm-2 control-label'
       .col-sm-10
-        = select_tag( 'learning_skill', options_from_collection_for_select( @d_dungeoneer.s_skills, :id, :name, @d_dungeoneer.s_current_learning_d_dungeoneer_skill&.id ), include_blank: true, class: 'form-control' )
+        = learning_skill_select
 
   .form-group
     .col-sm-offset-2.col-sm-10

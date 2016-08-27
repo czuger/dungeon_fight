@@ -1,0 +1,12 @@
+---
+:fr:
+  d_dungeoneer_skill:
+  - id: Change me
+  - d_dungeoneer_id: Change me
+  - s_skill_id: Change me
+  - active: Change me
+  - active_since: Change me
+  - level: Change me
+  - skills_points: Change me
+  - created_at: Change me
+  - updated_at: Change me

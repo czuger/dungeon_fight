@@ -1,0 +1,12 @@
+---
+:fr:
+  i_item:
+  - id: Change me
+  - name: Change me
+  - desc: Change me
+  - difficulty: Change me
+  - attack_dice: Change me
+  - c_class_id_id: Change me
+  - min_level: Change me
+  - created_at: Change me
+  - updated_at: Change me

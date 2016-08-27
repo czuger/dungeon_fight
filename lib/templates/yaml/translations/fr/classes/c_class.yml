@@ -1,0 +1,8 @@
+fr:
+  c_class:
+    singular: classe
+    plural: classes
+    new: nouvelle
+    edit: edition
+    show: détail
+    of_a: "d'une"
