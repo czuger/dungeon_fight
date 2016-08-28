@@ -24,7 +24,10 @@ class CCombatsController < ApplicationController
   # POST /c_combats
   # POST /c_combats.json
   def create
-    @c_combat = CCombat.new(c_combat_params)
+
+    set_result
+
+    @c_combat = CCombat.new( result: @result )
 
     respond_to do |format|
       if @c_combat.save
@@ -69,6 +72,17 @@ class CCombatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def c_combat_params
-      params.require(:c_combat).permit(:result)
+      params.require(:c_combat).permit(:monster, :dungeoneer)
+    end
+
+    def set_result
+      monster = MMonster.find( params[:monster] )
+      dungeoneers = params['dungeoneers'].values.reject{ |e| e.empty? }.map{ |e| DDungeoneer.find( e ) }
+      @result = []
+
+      fighters = [ monster ] + dungeoneers
+      fighters.each do |fighter|
+        @result << { name: fighter.name, attack_challenge: fighter.attack_challenge }
+      end
     end
 end

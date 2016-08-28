@@ -11,9 +11,17 @@
           %li= msg
 
   .form-group
-    = f.label t('c_combat.result'), class: 'col-sm-2 control-label'
+    = f.label 'Monster', class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :result, class: 'form-control'
+      = monster_select
+
+  - 1.upto( 3 ).each do |i|
+    .form-group
+      = f.label "Dungeoneer #{i}", class: 'col-sm-2 control-label'
+      .col-sm-10
+        = opponent(i)
+
+
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit value: t(:validate), class: 'btn btn-primary'

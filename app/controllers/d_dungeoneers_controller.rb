@@ -29,6 +29,7 @@ class DDungeoneersController < ApplicationController
 
   # POST /d_dungeoneers
   # POST /d_dungeoneers.json
+  # TODO : need to create the skill link on select attack item
   def create
     @d_dungeoneer = DDungeoneer.new(d_dungeoneer_params)
 
@@ -88,7 +89,7 @@ class DDungeoneersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def d_dungeoneer_params
-      params.require(:d_dungeoneer).permit(:name, :desc, :fo, :coo, :mem, :vol, :c_class_id)
+      params.require(:d_dungeoneer).permit(:name, :desc, :fo, :coo, :mem, :vol, :c_class_id, :attack_item_id )
     end
 
     def random_carac

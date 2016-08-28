@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160828134838) do
+ActiveRecord::Schema.define(version: 20160828162946) do
 
   create_table "c_classes", force: :cascade do |t|
     t.string   "name",       null: false
@@ -44,15 +44,17 @@ ActiveRecord::Schema.define(version: 20160828134838) do
   end
 
   create_table "d_dungeoneers", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "name",           null: false
     t.string   "desc"
-    t.integer  "fo",         null: false
-    t.integer  "coo",        null: false
-    t.integer  "mem",        null: false
-    t.integer  "vol",        null: false
-    t.integer  "c_class_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "fo",             null: false
+    t.integer  "coo",            null: false
+    t.integer  "mem",            null: false
+    t.integer  "vol",            null: false
+    t.integer  "c_class_id",     null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "attack_item_id"
+    t.index ["attack_item_id"], name: "index_d_dungeoneers_on_attack_item_id"
     t.index ["c_class_id"], name: "index_d_dungeoneers_on_c_class_id"
   end
 
