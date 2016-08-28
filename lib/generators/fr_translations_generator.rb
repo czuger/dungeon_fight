@@ -12,8 +12,6 @@ class FrTranslationsGenerator < Rails::Generators::Base
       models_names = [ model_name ]
     end
 
-    pp models_names
-
     [ :fr ].each do |lang|
 
       FrTranslationsGenerator.source_root( "lib/templates/yaml/translations/#{lang}/columns_names/" )

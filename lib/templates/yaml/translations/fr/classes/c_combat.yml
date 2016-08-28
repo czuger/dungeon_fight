@@ -1,0 +1,8 @@
+fr:
+  c_combat:
+    singular: combat
+    plural: combats
+    new: nouveau
+    edit: edition
+    show: détail
+    of_a: "d'un"

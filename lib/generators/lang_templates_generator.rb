@@ -16,7 +16,7 @@ class LangTemplatesGenerator < Rails::Generators::Base
         columns = obj.columns
         columns.reject!{ |e| HIDDEN_COLUMNS_NAMES.include?( e.name ) }
 
-        data = { fr: { model_name => obj.columns.map{ |e| { e.name => 'Change me' } } } }
+        data = { fr: { model_name => obj.columns.map{ |e| { e.name => e.name } } } }
         data = data.to_yaml
         data.gsub!( /^:/, '' )
         data.gsub!( '---', '' )

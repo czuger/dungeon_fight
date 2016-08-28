@@ -1,0 +1,1 @@
+json.partial! "c_combats/c_combat", c_combat: @c_combat

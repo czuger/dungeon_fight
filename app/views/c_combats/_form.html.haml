@@ -1,0 +1,19 @@
+= form_for @c_combat, html: { class: "form-horizontal", role: "form" } do |f|
+  -if @c_combat.errors.any?
+    .alert.alert-danger.alert-dismissable{role: "alert"}
+      %button.close{type: "button", data: {dismiss: "alert"} }
+        %span{aria: {hidden: "true"} } &times;
+        %span.sr-only Close
+      %h4= "#{pluralize(@c_combat.errors.count, "error")} prohibited this c_combat from being saved:"
+
+      %ul
+        - @c_combat.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label t('c_combat.result'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :result, class: 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit value: t(:validate), class: 'btn btn-primary'

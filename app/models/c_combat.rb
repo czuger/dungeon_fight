@@ -1,0 +1,2 @@
+class CCombat < ApplicationRecord
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160828095633) do
+ActiveRecord::Schema.define(version: 20160828134838) do
 
   create_table "c_classes", force: :cascade do |t|
     t.string   "name",       null: false
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 20160828095633) do
     t.integer "s_skill_id", null: false
     t.index ["c_class_id"], name: "index_c_classes_s_skills_on_c_class_id"
     t.index ["s_skill_id"], name: "index_c_classes_s_skills_on_s_skill_id"
+  end
+
+  create_table "c_combats", force: :cascade do |t|
+    t.string   "result",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "d_dungeoneer_skills", force: :cascade do |t|

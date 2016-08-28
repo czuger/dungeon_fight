@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  
+
+  resources :c_combats
+
   resources :m_monsters
   resources :i_items
   resources :d_dungeoneers
