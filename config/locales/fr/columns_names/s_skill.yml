@@ -1,6 +1,9 @@
----
-:fr:
+
+fr:
   s_skill:
-  - name: Change me
-  - desc: Change me
-  - difficulty: Change me
+    name: nom
+    desc: description
+    skills: competences
+    difficulty: difficulté
+    first_attribute: premier attribut
+    second_attribute: second attribut

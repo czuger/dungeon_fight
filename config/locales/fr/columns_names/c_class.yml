@@ -1,7 +1,5 @@
----
-:fr:
+
+fr:
   c_class:
-  - name: Change me
-  - desc: Change me
-  - first_attribute: Change me
-  - second_attribute: Change me
+    name: nom
+    desc: description

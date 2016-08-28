@@ -1,10 +1,10 @@
----
-:fr:
+
+fr:
   d_dungeoneer:
-  - name: Change me
-  - desc: Change me
-  - fo: Change me
-  - coo: Change me
-  - mem: Change me
-  - vol: Change me
-  - c_class_id: Change me
+    name: nom
+    desc: description
+    fo: force
+    coo: coordination
+    mem: mémoire
+    vol: volonté
+    c_class: classe
