@@ -4,7 +4,7 @@ FactoryGirl.define do
     desc "MyString"
     difficulty 1
     attack_dice 1
-    c_class
+    s_skill
     min_level 1
   end
 end

@@ -27,9 +27,9 @@
     .col-sm-10
       = f.number_field :attack_dice, class: 'form-control'
   .form-group
-    = f.label t('i_item.c_class_id'), class: 'col-sm-2 control-label'
+    = f.label t('i_item.s_skill'), class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :c_class_id, class: 'form-control'
+      = required_skill_select
   .form-group
     = f.label t('i_item.min_level'), class: 'col-sm-2 control-label'
     .col-sm-10

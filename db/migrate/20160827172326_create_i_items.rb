@@ -7,7 +7,7 @@ class CreateIItems < ActiveRecord::Migration[5.0]
       t.integer :attack_dice
       t.integer :min_level, default: 0
 
-      t.references :c_class, foreign_key: true
+      t.references :s_skill, foreign_key: true
 
       t.timestamps
     end

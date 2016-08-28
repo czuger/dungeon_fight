@@ -12,7 +12,7 @@
         %th= t( 'i_item.desc' ).capitalize
         %th= t( 'i_item.difficulty' ).capitalize
         %th= t( 'i_item.attack_dice' ).capitalize
-        %th= t( 'i_item.c_class_id' ).capitalize
+        %th= t( 'i_item.s_skill' ).capitalize
         %th= t( 'i_item.min_level' ).capitalize
         %th
         %th
@@ -25,7 +25,7 @@
           %td= i_item.desc
           %td= i_item.difficulty
           %td= i_item.attack_dice
-          %td= i_item.c_class_id
+          %td= i_item.s_skill.name
           %td= i_item.min_level
           %td= link_to t( 'show' ), i_item
           %td= link_to t( 'edit' ), edit_i_item_path(i_item)

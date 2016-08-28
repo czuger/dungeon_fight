@@ -22,6 +22,16 @@
     = f.label t('s_skill.difficulty'), class: 'col-sm-2 control-label'
     .col-sm-10
       = f.number_field :difficulty, class: 'form-control'
+
+  .form-group
+    = f.label t('s_skill.first_attribute'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :first_attribute, class: 'form-control'
+
+  .form-group
+    = f.label t('s_skill.second_attribute'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :second_attribute, class: 'form-control'
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit value: t(:validate), class: 'btn btn-primary'

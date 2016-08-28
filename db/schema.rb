@@ -55,11 +55,11 @@ ActiveRecord::Schema.define(version: 20160827172326) do
     t.string   "desc"
     t.integer  "difficulty",  default: 0
     t.integer  "attack_dice"
-    t.integer  "c_class_id"
     t.integer  "min_level",   default: 0
+    t.integer  "s_skill_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.index ["c_class_id"], name: "index_i_items_on_c_class_id"
+    t.index ["s_skill_id"], name: "index_i_items_on_s_skill_id"
   end
 
   create_table "s_skills", force: :cascade do |t|

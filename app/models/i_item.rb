@@ -1,3 +1,3 @@
 class IItem < ApplicationRecord
-  belongs_to :c_class
+  belongs_to :s_skill
 end
