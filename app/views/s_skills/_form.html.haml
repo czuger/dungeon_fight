@@ -26,12 +26,33 @@
   .form-group
     = f.label t('s_skill.first_attribute'), class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.number_field :first_attribute, class: 'form-control'
+      = f.radio_button( 'first_attribute', 'fo' )
+      = t('d_dungeoneer.fo').capitalize
+      %br
+      = f.radio_button( 'first_attribute', 'coo' )
+      = t('d_dungeoneer.coo').capitalize
+      %br
+      = f.radio_button( 'first_attribute', 'mem' )
+      = t('d_dungeoneer.mem').capitalize
+      %br
+      = f.radio_button( 'first_attribute', 'vol' )
+      = t('d_dungeoneer.vol').capitalize
 
   .form-group
     = f.label t('s_skill.second_attribute'), class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.number_field :second_attribute, class: 'form-control'
+      = f.radio_button( 'second_attribute', 'fo' )
+      = t('d_dungeoneer.fo').capitalize
+      %br
+      = f.radio_button( 'second_attribute', 'coo' )
+      = t('d_dungeoneer.coo').capitalize
+      %br
+      = f.radio_button( 'second_attribute', 'mem' )
+      = t('d_dungeoneer.mem').capitalize
+      %br
+      = f.radio_button( 'second_attribute', 'vol' )
+      = t('d_dungeoneer.vol').capitalize
+
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit value: t(:validate), class: 'btn btn-primary'
