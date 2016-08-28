@@ -2,7 +2,7 @@ require 'test_helper'
 
 class IItemsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @i_item = i_items(:one)
+    @i_item = create( :i_item )
   end
 
   test "should get index" do
@@ -17,7 +17,8 @@ class IItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create i_item" do
     assert_difference('IItem.count') do
-      post i_items_url, params: { i_item: { attack_dice: @i_item.attack_dice, c_class_id_id: @i_item.c_class_id_id, desc: @i_item.desc, difficulty: @i_item.difficulty, min_level: @i_item.min_level, name: @i_item.name } }
+      post i_items_url, params: { i_item: { attack_dice: @i_item.attack_dice, c_class_id: @i_item.c_class_id,
+         desc: @i_item.desc, difficulty: @i_item.difficulty, min_level: @i_item.min_level, name: @i_item.name } }
     end
 
     assert_redirected_to i_item_url(IItem.last)
@@ -34,7 +35,7 @@ class IItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update i_item" do
-    patch i_item_url(@i_item), params: { i_item: { attack_dice: @i_item.attack_dice, c_class_id_id: @i_item.c_class_id_id, desc: @i_item.desc, difficulty: @i_item.difficulty, min_level: @i_item.min_level, name: @i_item.name } }
+    patch i_item_url(@i_item), params: { i_item: { attack_dice: @i_item.attack_dice, c_class_id: @i_item.c_class_id, desc: @i_item.desc, difficulty: @i_item.difficulty, min_level: @i_item.min_level, name: @i_item.name } }
     assert_redirected_to i_item_url(@i_item)
   end
 

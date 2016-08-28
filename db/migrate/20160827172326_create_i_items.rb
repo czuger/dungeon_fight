@@ -5,8 +5,9 @@ class CreateIItems < ActiveRecord::Migration[5.0]
       t.string :desc
       t.integer :difficulty, default: 0
       t.integer :attack_dice
-      t.references :c_class_id, foreign_key: true
       t.integer :min_level, default: 0
+
+      t.references :c_class, foreign_key: true
 
       t.timestamps
     end

@@ -4,9 +4,6 @@ class CreateCClasses < ActiveRecord::Migration[5.0]
       t.string :name, null: false
       t.string :desc
 
-      t.string :first_attribute, null: false
-      t.string :second_attribute, null: false
-
       t.timestamps
     end
   end

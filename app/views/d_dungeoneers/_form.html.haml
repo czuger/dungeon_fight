@@ -40,11 +40,6 @@
       = f.label t('d_dungeoneer.c_class'), class: 'col-sm-2 control-label'
       .col-sm-10
         = f.collection_select :c_class_id, CClass.all.order( :name ), :id, :name, class: 'form-control'
-  - else
-    .form-group
-      = f.label '.learning_skill', class: 'col-sm-2 control-label'
-      .col-sm-10
-        = learning_skill_select
 
   .form-group
     .col-sm-offset-2.col-sm-10

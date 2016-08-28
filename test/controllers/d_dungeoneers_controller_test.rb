@@ -42,7 +42,7 @@ class DDungeoneersControllerTest < ActionDispatch::IntegrationTest
 
   test "should update d_dungeoneer with a skill to learn" do
     skill = create( :s_skill )
-    create( :d_dungeoneer_skill, active: false, d_dungeoneer_id: @d_dungeoneer.id, s_skill_id: skill.id )
+    create( :d_dungeoneer_skill, d_dungeoneer_id: @d_dungeoneer.id, s_skill_id: skill.id )
     patch d_dungeoneer_url(@d_dungeoneer), params: { d_dungeoneer:
        { c_class_id: @d_dungeoneer.c_class_id, coo: @d_dungeoneer.coo, desc: @d_dungeoneer.desc, fo: @d_dungeoneer.fo,
        mem: @d_dungeoneer.mem, name: @d_dungeoneer.name, vol: @d_dungeoneer.vol }, learning_skill: skill.id }

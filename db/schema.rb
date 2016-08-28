@@ -13,12 +13,10 @@
 ActiveRecord::Schema.define(version: 20160827172326) do
 
   create_table "c_classes", force: :cascade do |t|
-    t.string   "name",             null: false
+    t.string   "name",       null: false
     t.string   "desc"
-    t.string   "first_attribute",  null: false
-    t.string   "second_attribute", null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "c_classes_s_skills", id: false, force: :cascade do |t|
@@ -55,21 +53,23 @@ ActiveRecord::Schema.define(version: 20160827172326) do
   create_table "i_items", force: :cascade do |t|
     t.string   "name"
     t.string   "desc"
-    t.integer  "difficulty",    default: 0
+    t.integer  "difficulty",  default: 0
     t.integer  "attack_dice"
-    t.integer  "c_class_id_id"
-    t.integer  "min_level",     default: 0
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.index ["c_class_id_id"], name: "index_i_items_on_c_class_id_id"
+    t.integer  "c_class_id"
+    t.integer  "min_level",   default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["c_class_id"], name: "index_i_items_on_c_class_id"
   end
 
   create_table "s_skills", force: :cascade do |t|
-    t.string   "name",                   null: false
+    t.string   "name",                         null: false
     t.string   "desc"
-    t.integer  "difficulty", default: 1, null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "difficulty",       default: 1, null: false
+    t.string   "first_attribute",              null: false
+    t.string   "second_attribute",             null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
 end
