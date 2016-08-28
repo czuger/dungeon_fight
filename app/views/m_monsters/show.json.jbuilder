@@ -1,0 +1,1 @@
+json.partial! "m_monsters/m_monster", m_monster: @m_monster

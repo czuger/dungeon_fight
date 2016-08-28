@@ -20,6 +20,7 @@ class LangTemplatesGenerator < Rails::Generators::Base
         data = data.to_yaml
         data.gsub!( /^:/, '' )
         data.gsub!( '---', '' )
+        data.gsub!( '- ', '  ' )
 
         create_file( "lib/templates/yaml/translations/#{lang}/columns_names/#{model_name}.yml", data )
 

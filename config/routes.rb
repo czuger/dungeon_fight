@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :m_monsters
   resources :i_items
   resources :d_dungeoneers
   resources :s_skills

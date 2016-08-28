@@ -1,14 +1,24 @@
 class FrTranslationsGenerator < Rails::Generators::Base
 
+  argument :model_name, :type => :string, :default => 'all'
+
   def create_yml_files
 
     Rails.application.eager_load!
+
+    if model_name == 'all'
+      models_names = ApplicationRecord.send(:subclasses).map{ |e| e.name.underscore }
+    else
+      models_names = [ model_name ]
+    end
+
+    pp models_names
 
     [ :fr ].each do |lang|
 
       FrTranslationsGenerator.source_root( "lib/templates/yaml/translations/#{lang}/columns_names/" )
 
-      ApplicationRecord.send(:subclasses).map{ |e| e.name.underscore }.each do |model_name|
+      models_names.each do |model_name|
 
         copy_file( "#{model_name}.yml", "config/locales/#{lang}/columns_names/#{model_name}.yml" )
 
@@ -36,7 +46,7 @@ class FrTranslationsGenerator < Rails::Generators::Base
           file_content.gsub!( 'translated_show_capitalized', classes_translations[model_name]['show'].capitalize )
           file_content.gsub!( 'translated_show', classes_translations[model_name]['show'] )
 
-          create_file( "config/locales/#{lang}/#{model_name.pluralize}/#{File.basename( entry )}", file_content )
+          create_file( "config/locales/#{lang}/views/#{model_name.pluralize}/#{File.basename( entry )}", file_content )
         end
       end
     end

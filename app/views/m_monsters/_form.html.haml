@@ -1,0 +1,31 @@
+= form_for @m_monster, html: { class: "form-horizontal", role: "form" } do |f|
+  -if @m_monster.errors.any?
+    .alert.alert-danger.alert-dismissable{role: "alert"}
+      %button.close{type: "button", data: {dismiss: "alert"} }
+        %span{aria: {hidden: "true"} } &times;
+        %span.sr-only Close
+      %h4= "#{pluralize(@m_monster.errors.count, "error")} prohibited this m_monster from being saved:"
+
+      %ul
+        - @m_monster.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label t('m_monster.name'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label t('m_monster.desc'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :desc, class: 'form-control'
+  .form-group
+    = f.label t('m_monster.attack_level'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :attack_level, class: 'form-control'
+  .form-group
+    = f.label t('m_monster.attack_item'), class: 'col-sm-2 control-label'
+    .col-sm-10
+      = attack_item_select( f )
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit value: t(:validate), class: 'btn btn-primary'

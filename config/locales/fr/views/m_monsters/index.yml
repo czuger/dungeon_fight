@@ -1,0 +1,6 @@
+fr:
+  m_monsters:
+    index:
+      new: 'Nouveau monstre'
+      list: 'Liste des monstres'
+

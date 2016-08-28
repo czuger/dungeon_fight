@@ -1,0 +1,28 @@
+.page-header
+  = link_to new_m_monster_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    = t( '.new' )
+  %h1= t( '.list' )
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th= t( 'm_monster.name' ).capitalize
+        %th= t( 'm_monster.desc' ).capitalize
+        %th= t( 'm_monster.attack_level' ).capitalize
+        %th= t( 'm_monster.attack_item' ).capitalize
+        %th
+        %th
+        %th
+
+    %tbody
+      - @m_monsters.each do |m_monster|
+        %tr
+          %td= m_monster.name
+          %td= m_monster.desc
+          %td= m_monster.attack_level
+          %td= m_monster.attack_item.name
+          %td= link_to t( 'show' ), m_monster
+          %td= link_to t( 'edit' ), edit_m_monster_path(m_monster)
+          %td= link_to t( 'destroy' ), m_monster, data: { confirm: 'Are you sure?' }, method: :delete

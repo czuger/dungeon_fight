@@ -1,0 +1,7 @@
+
+fr:
+  m_monster:
+    name: nom
+    desc: description
+    attack_level: niveau d'attaque
+    attack_item: objet d'attaque

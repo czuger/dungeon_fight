@@ -1,0 +1,8 @@
+fr:
+  m_monster:
+    singular: monstre
+    plural: monstres
+    new: nouveau
+    edit: edition
+    show: détail
+    of_a: "d'un"

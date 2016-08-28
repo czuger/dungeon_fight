@@ -1,0 +1,18 @@
+.page-header
+  = link_to m_monsters_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    =t('back')
+  = link_to edit_m_monster_path(@m_monster), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    =t('edit')
+  %h1= t('.show')
+
+%dl.dl-horizontal
+  %dt=t('m_monster.name').capitalize+':'
+  %dd= @m_monster.name
+  %dt=t('m_monster.desc').capitalize+':'
+  %dd= @m_monster.desc
+  %dt=t('m_monster.attack_level').capitalize+':'
+  %dd= @m_monster.attack_level
+  %dt=t('m_monster.attack_item').capitalize+':'
+  %dd= @m_monster.attack_item.name
