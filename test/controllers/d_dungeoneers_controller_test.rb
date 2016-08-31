@@ -17,7 +17,9 @@ class DDungeoneersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create d_dungeoneer" do
     assert_difference('DDungeoneer.count') do
-      post d_dungeoneers_url, params: { d_dungeoneer: { c_class_id: @d_dungeoneer.c_class_id, coo: @d_dungeoneer.coo, desc: @d_dungeoneer.desc, fo: @d_dungeoneer.fo, mem: @d_dungeoneer.mem, name: @d_dungeoneer.name, vol: @d_dungeoneer.vol } }
+      post d_dungeoneers_url, params: { d_dungeoneer: { c_class_id: @d_dungeoneer.c_class_id, coo: @d_dungeoneer.coo,
+        desc: @d_dungeoneer.desc, fo: @d_dungeoneer.fo, mem: @d_dungeoneer.mem, name: @d_dungeoneer.name,
+        vol: @d_dungeoneer.vol, class_id: @d_dungeoneer.c_class_id, attack_item_id: @d_dungeoneer.attack_item_id } }
     end
 
     assert_redirected_to d_dungeoneer_url(DDungeoneer.last)

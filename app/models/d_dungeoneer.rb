@@ -1,9 +1,9 @@
 class DDungeoneer < ApplicationRecord
 
-  include GameLogic::Combat
+  include GameLogicModel::Fighter
 
   belongs_to :c_class
-  belongs_to :attack_item, class_name: 'IItem'
+  belongs_to :attack_item, class_name: 'IItem', optional: true
 
   has_many :d_dungeoneer_skills, dependent: :destroy
   has_many :s_skills, through: :d_dungeoneer_skills, source: :s_skill

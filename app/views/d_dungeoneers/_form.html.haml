@@ -41,10 +41,11 @@
       .col-sm-10
         = f.collection_select :c_class_id, CClass.all.order( :name ), :id, :name, class: 'form-control'
 
-  .form-group
-    = f.label t('m_monster.attack_item'), class: 'col-sm-2 control-label'
-    .col-sm-10
-      = dungeoneer_attack_item_select( f )
+  - if @update_lock
+    .form-group
+      = f.label t('m_monster.attack_item'), class: 'col-sm-2 control-label'
+      .col-sm-10
+        = dungeoneer_attack_item_select( f )
 
   .form-group
     .col-sm-offset-2.col-sm-10

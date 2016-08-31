@@ -7,5 +7,6 @@ FactoryGirl.define do
     mem 1
     vol 1
     c_class
+    attack_item_id { create( :i_item ).id }
   end
 end

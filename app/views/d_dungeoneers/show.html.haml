@@ -23,7 +23,13 @@
   %dt=t('d_dungeoneer.c_class').capitalize+':'
   %dd= @d_dungeoneer.c_class.name
   %dt=t('m_monster.attack_item').capitalize+':'
-  %dd= @d_dungeoneer.attack_item.name
+  %dd= @d_dungeoneer.attack_item&.name
+
+%dl.dl-horizontal
+
+  - @d_dungeoneer.d_dungeoneer_skills.each do |d_skill|
+    %dt=d_skill.s_skill.name+':'
+    %dd= d_skill.skills_points
 
 
 

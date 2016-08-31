@@ -1,5 +1,5 @@
 .page-header
-  = link_to new_c_combat_path, class: 'btn btn-primary' do
+  = link_to new_f_fight_url, class: 'btn btn-primary' do
     %span.glyphicon.glyphicon-plus
     = t( '.new' )
   %h1= t( '.list' )
@@ -14,9 +14,9 @@
         %th
 
     %tbody
-      - @c_combats.each do |c_combat|
+      - @f_fights.each do |c_combat|
         %tr
-          %td= c_combat.result
+          %td= c_combat.id
           %td= link_to t( 'show' ), c_combat
-          %td= link_to t( 'edit' ), edit_c_combat_path(c_combat)
+          %td= link_to t( 'edit' ), edit_f_fight_url(c_combat)
           %td= link_to t( 'destroy' ), c_combat, data: { confirm: 'Are you sure?' }, method: :delete

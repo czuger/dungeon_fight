@@ -1,0 +1,56 @@
+.page-header
+  = link_to f_fights_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    =t('back')
+  = link_to edit_f_fight_path(@f_fight), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    =t('edit')
+  %h1= t('.show')
+
+%dl.dl-horizontal
+  %h3
+    Participants
+  %table.table.table-bordered.table-striped
+    %thead
+      %tr
+        %th= 'Nom'
+        %th= 'Attribute bonus'
+        %th= 'Comp bonus'
+        %th= 'Total bonus'
+        %th= 'Item attack difficulty'
+    %tbody
+
+      - ( @f_fight.d_dungeoneers + @f_fight.m_monsters ).each do |participant|
+        - attack_challenge = participant.attack_challenge
+        %tr
+          %td= participant.name
+          %td= attack_challenge[:attr_bonus]
+          %td= attack_challenge[:comp_bonus]
+          %td= attack_challenge[:total_bonus]
+          %td= attack_challenge[:item_difficulty]
+
+        %dl.dl-horizontal
+  %h3
+    Participants
+  %table.table.table-bordered.table-striped
+    %thead
+      %tr
+        %th= 'Round nb'
+        %th= 'Attacker'
+        %th= 'Defender'
+        %th= 'Roll'
+        %th= 'Roll with bonus'
+        %th= 'To hit'
+        %th= 'Success'
+        %th= 'Skills points earned'
+    %tbody
+      - @f_fight.f_fight_results.includes(:attacker, :defender).each do |result|
+        %tr
+          %td= result.round
+          %td= result.attacker.name
+          %td= result.defender.name
+          %td= result.roll
+          %td= result.roll_with_bonus
+          %td= result.to_hit
+          %td= result.success
+          %td= result.skills_points_earned

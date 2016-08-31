@@ -4,13 +4,12 @@ class DDungeoneersController < ApplicationController
   # GET /d_dungeoneers
   # GET /d_dungeoneers.json
   def index
-    @d_dungeoneers = DDungeoneer.all
+    @d_dungeoneers = DDungeoneer.includes(:c_class).all
   end
 
   # GET /d_dungeoneers/1
   # GET /d_dungeoneers/1.json
   def show
-    update_skills_points
   end
 
   # GET /d_dungeoneers/new
@@ -53,8 +52,7 @@ class DDungeoneersController < ApplicationController
     ActiveRecord::Base.transaction do
       respond_to do |format|
         if @d_dungeoneer.update(d_dungeoneer_params)
-          update_skills_points
-          update_skills_status
+          update_attack_item
           format.html { redirect_to @d_dungeoneer, notice: 'D dungeoneer was successfully updated.' }
           format.json { render :show, status: :ok, location: @d_dungeoneer }
         else
@@ -78,13 +76,14 @@ class DDungeoneersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_d_dungeoneer
-      @d_dungeoneer = DDungeoneer.find(params[:id])
+      @d_dungeoneer = DDungeoneer.includes(:c_class).find(params[:id])
     end
 
-    def update_skills_status
-    end
-
-    def update_skills_points
+    def update_attack_item
+      attack_item = @d_dungeoneer.attack_item
+      if attack_item && !@d_dungeoneer.d_dungeoneer_skills.exists?( attack_item.s_skill_id )
+        @d_dungeoneer.s_skills << attack_item.s_skill
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

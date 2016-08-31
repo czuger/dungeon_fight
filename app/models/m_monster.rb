@@ -1,6 +1,6 @@
 class MMonster < ApplicationRecord
 
-  include GameLogic::Combat
+  include GameLogicModel::Fighter
 
   belongs_to :attack_item, class_name: 'IItem'
 

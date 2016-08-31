@@ -2,47 +2,49 @@ require 'test_helper'
 
 class CCombatsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @c_combat = create( :c_combat )
+    @f_fight = create( :f_fight )
+    @m_monster = create( :m_monster )
+    @d_dungeoneer = create( :d_dungeoneer )
+    create( :d_dungeoneer_skill, d_dungeoneer_id: @d_dungeoneer.id, s_skill_id: @d_dungeoneer.attack_item.s_skill_id )
   end
 
   test "should get index" do
-    get c_combats_url
+    get f_fights_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_c_combat_url
+    get new_f_fight_url
     assert_response :success
   end
 
   test "should create c_combat" do
-    assert_difference('CCombat.count') do
-      post c_combats_url, params: { c_combat: { result: @c_combat.result } }
+    assert_difference('FFight.count') do
+      post f_fights_url, params: { monster: @m_monster.id, dungeoneers: { '1'=> @d_dungeoneer.id } }
     end
-
-    assert_redirected_to c_combat_url(CCombat.last)
+    assert_redirected_to f_fight_url(FFight.last)
   end
 
   test "should show c_combat" do
-    get c_combat_url(@c_combat)
+    get f_fight_url(@f_fight)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_c_combat_url(@c_combat)
+    get edit_f_fight_url(@f_fight)
     assert_response :success
   end
 
   test "should update c_combat" do
-    patch c_combat_url(@c_combat), params: { c_combat: { result: @c_combat.result } }
-    assert_redirected_to c_combat_url(@c_combat)
+    patch f_fight_url(@f_fight), params: {co_combat: {result: nil } }
+    assert_redirected_to f_fight_url(@f_fight)
   end
 
   test "should destroy c_combat" do
-    assert_difference('CCombat.count', -1) do
-      delete c_combat_url(@c_combat)
+    assert_difference('FFight.count', -1) do
+      delete f_fight_url(@f_fight)
     end
 
-    assert_redirected_to c_combats_url
+    assert_redirected_to f_fights_url
   end
 end

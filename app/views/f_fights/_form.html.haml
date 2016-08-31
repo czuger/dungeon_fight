@@ -1,13 +1,13 @@
-= form_for @c_combat, html: { class: "form-horizontal", role: "form" } do |f|
-  -if @c_combat.errors.any?
+= form_for @f_fight, html: { class: "form-horizontal", role: "form" } do |f|
+  -if @f_fight.errors.any?
     .alert.alert-danger.alert-dismissable{role: "alert"}
       %button.close{type: "button", data: {dismiss: "alert"} }
         %span{aria: {hidden: "true"} } &times;
         %span.sr-only Close
-      %h4= "#{pluralize(@c_combat.errors.count, "error")} prohibited this c_combat from being saved:"
+      %h4= "#{pluralize(f_fight.errors.count, "error")} prohibited this c_combat from being saved:"
 
       %ul
-        - @c_combat.errors.full_messages.each do |msg|
+        - f_fight.errors.full_messages.each do |msg|
           %li= msg
 
   .form-group

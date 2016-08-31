@@ -1,0 +1,1 @@
+json.array! co_combats, partial: 'c_combats/c_combat', as: :co_combat

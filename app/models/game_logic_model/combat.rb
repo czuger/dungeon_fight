@@ -1,12 +1,10 @@
-module GameLogic
+module GameLogicModel
   module Combat
 
-    def round( monsters, dungeoneers )
+    def round( monsters, dungeoneers, round_nb )
 
       attackers = Hash[ ( monsters + dungeoneers ).map{ |e| [ e.class.name+e.id.to_s, e ] } ]
       attackers_ids = attackers.keys.shuffle
-
-      round_result = []
 
       until attackers_ids.empty?
         attacker_id = attackers_ids.shift
@@ -16,24 +14,19 @@ module GameLogic
         else
           defender = monsters.sample
         end
-        round_result << attacker.attack( defender )
+        attacker.attack( defender, self, round_nb )
       end
     end
 
-    def attack( defender )
-      dice_result = rand( 1..10 ) + rand( 1..10 )
-      result = dice_result <= attack_challenge[ :total_bonus ]
-      "#{name} -> #{defender.name} - roll: #{dice_result} - attack_succeed: #{result}" + add_skill_points( result )
-    end
+    def resolve_combat( monsters, dungeoneers )
 
-    def add_skill_points( result )
-      if result && self.class == DDungeoneer
-        skill = d_dungeoneer_skills.find_by_s_skill_id( attack_item.s_skill_id )
-        skill.increase( 5 )
-        return ' - skills points earned : 5'
+      self.m_monster_ids = monsters.pluck(:id)
+      self.d_dungeoneer_ids = dungeoneers.pluck(:id)
+
+      1.upto(5).each do |i|
+        round( monsters, dungeoneers, i )
       end
-      ''
-    end
 
+    end
   end
 end
