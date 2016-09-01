@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160831134010) do
+ActiveRecord::Schema.define(version: 20160901073635) do
 
   create_table "c_classes", force: :cascade do |t|
     t.string   "name",       null: false
@@ -38,16 +38,17 @@ ActiveRecord::Schema.define(version: 20160831134010) do
   end
 
   create_table "d_dungeoneers", force: :cascade do |t|
-    t.string   "name",           null: false
+    t.string   "name",                       null: false
     t.string   "desc"
-    t.integer  "fo",             null: false
-    t.integer  "coo",            null: false
-    t.integer  "mem",            null: false
-    t.integer  "vol",            null: false
-    t.integer  "c_class_id",     null: false
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "fo",                         null: false
+    t.integer  "coo",                        null: false
+    t.integer  "mem",                        null: false
+    t.integer  "vol",                        null: false
+    t.integer  "c_class_id",                 null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "attack_item_id"
+    t.integer  "hit_points",     default: 8, null: false
     t.index ["attack_item_id"], name: "index_d_dungeoneers_on_attack_item_id"
     t.index ["c_class_id"], name: "index_d_dungeoneers_on_c_class_id"
   end
@@ -72,6 +73,8 @@ ActiveRecord::Schema.define(version: 20160831134010) do
     t.integer  "skills_points_earned"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "hit_points_loss"
+    t.integer  "remaining_hit_points"
     t.index ["attacker_type", "attacker_id"], name: "index_f_fight_results_on_attacker_type_and_attacker_id"
     t.index ["defender_type", "defender_id"], name: "index_f_fight_results_on_defender_type_and_defender_id"
     t.index ["f_fight_id"], name: "index_f_fight_results_on_f_fight_id"
@@ -80,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160831134010) do
   create_table "f_fights", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "winners"
   end
 
   create_table "f_fights_m_monsters", id: false, force: :cascade do |t|
@@ -101,12 +105,13 @@ ActiveRecord::Schema.define(version: 20160831134010) do
   end
 
   create_table "m_monsters", force: :cascade do |t|
-    t.string   "name",           null: false
+    t.string   "name",                       null: false
     t.string   "desc"
     t.integer  "attack_level"
     t.integer  "attack_item_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "hit_points",     default: 8, null: false
     t.index ["attack_item_id"], name: "index_m_monsters_on_attack_item_id"
   end
 

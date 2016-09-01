@@ -29,9 +29,11 @@
           %td= attack_challenge[:total_bonus]
           %td= attack_challenge[:item_difficulty]
 
-        %dl.dl-horizontal
+  %h3= "Winners: #{@f_fight.winners}"
+
+%dl.dl-horizontal
   %h3
-    Participants
+    Fight detail
   %table.table.table-bordered.table-striped
     %thead
       %tr
@@ -42,6 +44,8 @@
         %th= 'Roll with bonus'
         %th= 'To hit'
         %th= 'Success'
+        %th= 'Hits points loss'
+        %th= 'Remaining hit points'
         %th= 'Skills points earned'
     %tbody
       - @f_fight.f_fight_results.includes(:attacker, :defender).each do |result|
@@ -53,4 +57,6 @@
           %td= result.roll_with_bonus
           %td= result.to_hit
           %td= result.success
+          %td= result.hit_points_loss
+          %td= result.remaining_hit_points
           %td= result.skills_points_earned

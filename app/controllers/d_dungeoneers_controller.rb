@@ -28,7 +28,6 @@ class DDungeoneersController < ApplicationController
 
   # POST /d_dungeoneers
   # POST /d_dungeoneers.json
-  # TODO : need to create the skill link on select attack item
   def create
     @d_dungeoneer = DDungeoneer.new(d_dungeoneer_params)
 
